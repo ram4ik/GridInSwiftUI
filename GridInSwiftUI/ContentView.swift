@@ -9,12 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
+        Grid {
+            GridRow {
+                Text("Row 1")
+                ForEach(0..<2) { _ in Color.red }
+            }
+            GridRow {
+                Text("Row 2")
+                ForEach(0..<5) { _ in Color.green }
+            }
+            GridRow {
+                Text("Row 3")
+                ForEach(0..<4) { _ in Color.blue }
+            }
+        }.padding()
     }
 }
 
